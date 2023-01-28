@@ -77,6 +77,7 @@ $returnJson=json_decode($returnJson,true);
     }
 ?>
 <div class="amount">￥<?php echo $returnJson['data']['reallyPrice']?></div>
+<p style="color: red;font-size: 16px;">请输入上方准确的金额否则订单无法完成</p>
 <div class="qr-image" id="qrcode">
 </div>
 <?php if($typename == 'wxpay'){?>
