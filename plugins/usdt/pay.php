@@ -14,20 +14,20 @@
     <link href="/assets/usdt/main.min.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container">
-    <div class="header">
+<div class="container" style="margin-top: -10%;">
+    <div class="header" style="width: 50%;">
         <div class="icon">
             <img class="logo" src="/assets/usdt/tether.svg" alt="logo">
         </div>
-        <h1>
-            <?= $_SERVER['HTTP_HOST']; ?>
-        </h1>
-        <label>
-            请扫描二维码或点击金额和地址粘贴转账USDT(trc-20)支付。<br> <b>转账金额必须为下方显示的金额且需要在倒计时内完成转账，否则无法被系统确认！</b>
-        </label>
+        <p style="color: #3C8CE7 ;font-size: 18px;font-weight: 700; text-align: center;margin: 20px 0;">
+            支付方式：[ USDT(TRC20) ], 请打开 APP 扫码支付！或点击复制地址！有效期20分钟
+        </p>
     </div>
-    <div class="content">
+    <div class="content" style="width: 50%;">
         <div class="section">
+            <p class="product-pay-price" style="font-size: 16px;color: red;">
+                到账金额<strong>必须相同</strong>，否则订单将无效
+            </p>
             <div class="title">
                 <h1 class="amount parse-amount" data-clipboard-text="<?= $usdt; ?>" id="usdt">
                     <?= $usdt; ?> <span>USDT.TRC20</span>
