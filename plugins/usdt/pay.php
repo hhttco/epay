@@ -9,15 +9,15 @@
     <meta name="format-detection" content="telephone=no"/>
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-    <link rel="shortcut icon" href="<?= PLUGIN_STATIC ?>/img/tether.svg"/>
+    <link rel="shortcut icon" href="/assets/usdt/tether.svg"/>
     <title>USDT 在线收银台</title>
-    <link href="<?= PLUGIN_STATIC ?>/css/main.min.css" rel="stylesheet"/>
+    <link href="/assets/usdt/main.min.css" rel="stylesheet"/>
 </head>
 <body>
 <div class="container">
     <div class="header">
         <div class="icon">
-            <img class="logo" src="<?= PLUGIN_STATIC ?>/img/tether.svg" alt="logo">
+            <img class="logo" src="/assets/usdt/tether.svg" alt="logo">
         </div>
         <h1>
             <?= $_SERVER['HTTP_HOST']; ?>
@@ -59,14 +59,14 @@
             </div>
         </div>
     </div>
-    <div class="footer">
-        <p>Powered by <a href="https://github.com/v03413/epay_usdt" target="_blank">莫名博客</a></p>
-    </div>
+    <!-- <div class="footer">
+        <p>Powered by <a href="" target="_blank">测试</a></p>
+    </div> -->
 </div>
-<script src="<?= PLUGIN_STATIC ?>/js/jquery.min.js"></script>
-<script src="<?= PLUGIN_STATIC ?>/js/clipboard.min.js"></script>
-<script src="<?php echo $cdnpublic ?>layer/3.1.1/layer.js"></script>
-<script src="<?php echo $cdnpublic ?>jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script src="/assets/usdt/jquery.min.js"></script>
+<script src="</assets/usdt/clipboard.min.js"></script>
+<script src="/assets/js/jquery-qrcode.min.js"></script>
+<script src="//cdn.staticfile.org/layer/2.3/layer.js"></script>
 <script>
     // 检查是否支付完成
     function loadmsg() {
