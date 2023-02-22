@@ -61,8 +61,7 @@ class usdt_plugin
     {
         global $channel;
 
-        if (isset($channel['appkey']) && $channel['appkey'] > 0) {
-
+        if (isset($channel['appkey']) && $channel['appkey'] != "AUTO") {
             return floatval($channel['appkey']);
         }
 
