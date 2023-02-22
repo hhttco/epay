@@ -14,7 +14,7 @@
     <link href="/assets/usdt/main.min.css" rel="stylesheet"/>
 </head>
 <body>
-<div class="container" style="margin-top: -10%;">
+<div class="container" style="margin-top: -3%;">
     <div class="header" style="width: 50%;">
         <div class="icon">
             <img class="logo" src="/assets/usdt/tether.svg" alt="logo">
