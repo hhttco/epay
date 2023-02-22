@@ -45,17 +45,17 @@ class usdt_plugin
             $usdt = bcadd($row['param'], 0.01, 2);
         }
 
-        if ($usdt < 1) {
-            echo "<p style='color: red;font-size: 18px;font-weight: 700; text-align: center;margin: 50px 0;'>转账金额: $usdt 必须大于1U<p>";
-            exit(1);
-        }
-
         $DB->exec('update pre_order set param = ? where trade_no = ?', [$usdt, $order['trade_no']]);
 
         ob_clean();
         header("application:text/html;charset=UTF-8");
 
         define('PLUGIN_PATH', PLUGIN_ROOT . PAY_PLUGIN . '/');
+
+        if ($usdt < 1) {
+            echo '<p style="color: red;font-size: 18px;font-weight: 700; text-align: center;margin: 50px 0;">转账金额: '.$usdt.' 必须大于1<p>';
+            exit(1);
+        }
 
         require_once PLUGIN_PATH . '/pay.php';
 
