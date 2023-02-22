@@ -84,14 +84,18 @@ class usdt_plugin
         while ($order = $rows->fetch(PDO::FETCH_ASSOC)) {
             foreach ($list as $item) {
                 if ($item['money'] == $order['param'] && $item['time'] >= strtotime($order['addtime'])) {
+                    $out_trade_no = $order['out_trade_no'];
+                    
+                    if($DB->exec("update `pre_order` set `status` ='1' where `trade_no`='$out_trade_no'")){
+                        $DB->exec("update `pre_order` set `api_trade_no` ='$out_trade_no',`endtime` ='$date',`date` =NOW() where `trade_no`='$out_trade_no'");
+                        processOrder($order);
+                    }
 
-                    processNotify($order, $item['trade_id'], $item['buyer']);
-                    echo sprintf("订单回调成功：%s\n", $order['trade_no']);
+                    // processNotify($order, $item['trade_id'], $item['buyer']);
+                    // echo sprintf("订单回调成功：%s\n", $order['trade_no']);
                 }
             }
         }
-
-        echo "---[监控执行结束： " . date('Y-m-d H:i:s') . "]---\n";
     }
 
     public static function getTransferInList(string $address, int $hour = 3): array
