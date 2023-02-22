@@ -64,7 +64,7 @@
     </div> -->
 </div>
 <script src="/assets/usdt/jquery.min.js"></script>
-<script src="</assets/usdt/clipboard.min.js"></script>
+<script src="/assets/usdt/clipboard.min.js"></script>
 <script src="/assets/js/jquery-qrcode.min.js"></script>
 <script src="//cdn.staticfile.org/layer/2.3/layer.js"></script>
 <script>
