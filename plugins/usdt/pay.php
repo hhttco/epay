@@ -33,11 +33,13 @@
                     <?= $usdt; ?> <span>USDT.TRC20</span>
                 </h1>
             </div>
-            <div class="address parse-action" data-clipboard-text="<?= $address; ?>" id="address">
-                <?= $address; ?>
-            </div>
-            <div class="main">
-                <div class="qr-image" id="qrcode"></div>
+            <div data-clipboard-text="<?= $address; ?>" id="address">
+                <div class="address parse-action">
+                    <?= $address; ?>
+                </div>
+                <div class="main">
+                    <div class="qr-image" id="qrcode"></div>
+                </div>
             </div>
             <div class="timer">
                 <ul class="downcount">
