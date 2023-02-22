@@ -84,10 +84,10 @@ class usdt_plugin
         while ($order = $rows->fetch(PDO::FETCH_ASSOC)) {
             foreach ($list as $item) {
                 if ($item['money'] == $order['param'] && $item['time'] >= strtotime($order['addtime'])) {
-                    $out_trade_no = $order['out_trade_no'];
-                    
-                    if($DB->exec("update `pre_order` set `status` ='1' where `trade_no`='$out_trade_no'")){
-                        $DB->exec("update `pre_order` set `api_trade_no` ='$out_trade_no',`endtime` ='$date',`date` =NOW() where `trade_no`='$out_trade_no'");
+                    $trade_no = $order['trade_no'];
+
+                    if($DB->exec("update `pre_order` set `status` ='1' where `trade_no`='$trade_no'")){
+                        $DB->exec("update `pre_order` set `api_trade_no` ='$trade_no',`endtime` =NOW(),`date` =NOW() where `trade_no`='$trade_no'");
                         processOrder($order);
                     }
 
