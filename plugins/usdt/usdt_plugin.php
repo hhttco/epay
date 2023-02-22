@@ -6,8 +6,8 @@ class usdt_plugin
     public static $info = [
         'name'     => 'usdt',
         'showname' => 'USDT 收款插件',
-        'author'   => '莫名',
-        'link'     => 'https://qzone.work/codes/741.html',
+        'author'   => '',
+        'link'     => '',
         'types'    => ['usdt'],
         'inputs'   => [
             'appid'  => [
@@ -32,7 +32,7 @@ class usdt_plugin
 
     public static function submit()
     {
-        global $channel, $order, $conf, $DB, $cdnpublic;
+        global $channel, $order, $conf, $DB;
 
         $valid   = (strtotime($order['addtime']) + intval($channel['appurl'])) * 1000;
         $address = $channel['appid'];
@@ -51,7 +51,6 @@ class usdt_plugin
         header("application:text/html;charset=UTF-8");
 
         define('PLUGIN_PATH', PLUGIN_ROOT . PAY_PLUGIN . '/');
-        define('PLUGIN_STATIC', 'https://cdn.vizan.cc/other/epay_usdt');
 
         require_once PLUGIN_PATH . '/pay.php';
 
